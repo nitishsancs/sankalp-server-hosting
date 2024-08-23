@@ -214,7 +214,7 @@ const JWT_SECRET = process.env.JWT_SECRET;
 
 // CORS configuration
 app.use(cors({
-  origin: "*",
+  origin: ["http://127.0.0.1:3000", process.env.CLIENT_URL, "http://localhost:5173", "https://reading-test.vercel.app"],
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true,
