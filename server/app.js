@@ -207,8 +207,8 @@ const cors = require("cors");
 const app = express();
 app.use(express.json());
 
-const PORT = process.env.PORT || 3000;
-const JWT_SECRET = process.env.JWT_SECRET || 'your_jwt_secret';
+const PORT = process.env.PORT;
+const JWT_SECRET = process.env.JWT_SECRET;
 
 // app.use(cors({ origin: "*" }));
 
@@ -228,7 +228,7 @@ app.options('*', (req, res) => {
 });
 
 // Connect to MongoDB Atlas
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb+srv://shivkamp:goodevening@cluster0.mtuwxiq.mongodb.net/';
+const MONGODB_URI = process.env.MONGODB_URI;
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 
 const db = mongoose.connection;
