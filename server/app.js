@@ -216,8 +216,10 @@ app.use(cors({
   credentials: true,
 }));
 
-// Handle preflight requests
-app.options('*', cors());
+// Handle preflight requests for all routes
+app.options('*', (req, res) => {
+  res.sendStatus(204);
+});
 
 // Connect to MongoDB Atlas
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb+srv://shivkamp:goodevening@cluster0.mtuwxiq.mongodb.net/';
