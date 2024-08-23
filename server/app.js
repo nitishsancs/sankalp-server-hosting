@@ -202,7 +202,7 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
 const cors = require("cors");
-app.use(cors());
+// app.use(cors());
 
 const app = express();
 app.use(express.json());
