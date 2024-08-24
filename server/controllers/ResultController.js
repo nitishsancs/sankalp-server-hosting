@@ -1,5 +1,7 @@
 const Result = require("../models/resultSchema");
 
+export const maxDuration = 55;
+
 const createResult = async (req, res) => {
     try {
       const { name, score, age, correctWords, incorrectWords } = req.body;

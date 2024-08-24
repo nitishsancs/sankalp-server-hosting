@@ -1,6 +1,8 @@
 const express = require("express")
 const router = express.Router()
 
+export const maxDuration = 55;
+
 const { createResult,getAllResult } = require("../controllers/ResultController")
 
 router.get('/', getAllResult) // gets all results
