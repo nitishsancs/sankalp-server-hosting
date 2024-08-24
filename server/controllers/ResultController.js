@@ -1,6 +1,5 @@
 const Result = require("../models/resultSchema");
 
-export const maxDuration = 55;
 
 const createResult = async (req, res) => {
     try {

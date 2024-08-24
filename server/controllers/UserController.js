@@ -2,7 +2,6 @@ const User = require("../models/userSchema");
 const bcrypt = require("bcryptjs")
 
 
-export const maxDuration = 55;
 
 const createUser = async (req,res) => {
     try{

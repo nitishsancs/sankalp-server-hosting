@@ -1,7 +1,6 @@
 const express = require("express")
 const router = express.Router()
 
-export const maxDuration = 55;
 
 const { createUser,getUser,getUserById,getUserId } = require("../controllers/UserController")
 
