@@ -7,10 +7,10 @@ var bodyParser = require("body-parser");
 const connectDB = require("./database");
 
 // This middleware is no longer needed because the CORS configuration below will handle all origins.
-// app.all('*', (req, res, next) => {
-//   res.header("Access-Control-Allow-Origin", "https://reading-test.vercel.app/");
-//   next();
-// });
+app.all('*', (req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  next();
+});
 
 app.use(
   cors({
