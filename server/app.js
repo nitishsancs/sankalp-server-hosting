@@ -210,15 +210,21 @@ app.use(express.json());
 const PORT = process.env.PORT;
 const JWT_SECRET = process.env.JWT_SECRET;
 
-app.use(cors({ origin: "*" }));
+// app.use(cors({ origin: "*" }));
 
 // CORS configuration
 // app.use(cors({
-//   origin: ["http://127.0.0.1:3000", process.env.CLIENT_URL, "http://localhost:5173", "https://reading-test.vercel.app"],
-//   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-//   allowedHeaders: ["Content-Type", "Authorization"],
-//   credentials: true,
+  // origin: ["http://127.0.0.1:3000", process.env.CLIENT_URL, "http://localhost:5173", "https://reading-test.vercel.app"],
+  // methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  // allowedHeaders: ["Content-Type", "Authorization"],
+  // credentials: true,
 // }));
+app.use(cors({
+  origin: "*",
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+  credentials: true,
+}));
 
 
 
@@ -226,6 +232,10 @@ app.use(cors({ origin: "*" }));
 // app.options('*', (req, res) => {
 //   res.sendStatus(204);
 // });
+app.options('*', (req, res) => {
+  res.sendStatus(204);
+});
+
 
 // Connect to MongoDB Atlas
 const MONGODB_URI = process.env.MONGODB_URI;
