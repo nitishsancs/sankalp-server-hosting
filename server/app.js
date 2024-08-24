@@ -25,6 +25,10 @@ app.use(bodyParser.json());
 app.use("/api/user", require("./routes/UserRoute"));
 app.use("/api/result", require("./routes/ResultRoute"));
 
+app.get('/', (req, res) => {
+    res.send("Welcome to the API");
+  });
+
 app.listen(process.env.PORT, () => {
   connectDB();
   console.log('Server is running on ${process.env.IP}:${process.env.PORT}');
