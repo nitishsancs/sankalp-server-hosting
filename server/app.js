@@ -238,7 +238,8 @@ app.options('*', (req, res) => {
 
 
 // Connect to MongoDB Atlas
-const MONGODB_URI = process.env.MONGODB_URI;
+// const MONGODB_URI = process.env.MONGODB_URI;
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb+srv://shivkamp:goodevening@cluster0.mtuwxiq.mongodb.net/';
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 
 const db = mongoose.connection;
