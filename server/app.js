@@ -220,7 +220,7 @@ const JWT_SECRET = process.env.JWT_SECRET || 'your_jwt_secret';
   // credentials: true,
 // }));
 app.use(cors({
-  origin: "*",
+    origin: ["https://sankalp-client-hosting-hvbeluf1c-nitishsancs-projects.vercel.app"],
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true,
