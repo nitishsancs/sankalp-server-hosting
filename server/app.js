@@ -19,6 +19,8 @@ app.use(
   })
 );
 
+app.options('*', cors()); // Preflight request for all routes
+
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
